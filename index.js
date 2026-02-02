@@ -72,6 +72,7 @@ const updateAddress = async ({ address, userId }) => {
     };
     await axios.request(config);
   } catch (error) {
+    console.log(`Error updating address for user ${userId}:`, error);
     fs.appendFileSync("failed_address_update.log", `${userId}\n`);
   }
 };
